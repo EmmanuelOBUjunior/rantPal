@@ -18,7 +18,7 @@ const page = () => {
       <div className="flex-1 overflow-y-auto p-4 space-y-4"></div>
 
       {/* Input Area */}
-      <form>
+      <form className="bg-gray-800 p-4 flex gap-2">
         <input
           type="text"
           placeholder="Rant away...what's bothering you today?"
