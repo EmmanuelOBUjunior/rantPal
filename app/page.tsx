@@ -11,7 +11,8 @@ export default function Home() {
         </p>
         <div className= "space-y-4">
           <p className="text-gray-300 italic">
-            "Bugs driving you crazy? Code not compiling? Manager setting impossible deadlines?"
+            "Bugs driving you crazy? Code not compiling? Manager setting impossible deadlines?"<br/>
+            Rant to our AI and get the most impractical adice you've ever heard!.
           </p>
         </div>
       </div>
