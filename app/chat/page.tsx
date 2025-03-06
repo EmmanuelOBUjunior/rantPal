@@ -1,5 +1,6 @@
 'use client'
 import Link from "next/link";
+import { useState } from "react";
 
 type Message = {
     id: string;
@@ -8,6 +9,12 @@ type Message = {
 }
 
 const page = () => {
+
+    const [messages, setMessages] = useState<Message[]>([{
+        id: '1',
+        content: "I'm RantPal, your sarcastic AI therapist. Tell me what's bothering you in your dev life, and I'll give you the most impractical advice possible",
+        sender: 'ai'
+    }])
 
   return (
     <div className="flex flex-col h-screen bg-gray-900">
