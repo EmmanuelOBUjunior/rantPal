@@ -106,7 +106,7 @@ const page = () => {
                 </div>
             </div>
         )}
-
+        <div ref={messagesEndRef}></div>
       </div>
 
       {/* Input Area */}
