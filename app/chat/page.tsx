@@ -47,6 +47,13 @@ const page = () => {
   const handleSubmit = async(e:React.FormEvent) =>{
     e.preventDefault();
     if(!input) return
+
+    //Add user message
+    const userMessage:Message = {
+        id: Date.now().toString(),
+        content: input,
+        sender: 'user'
+    }
   }
 
   return (
