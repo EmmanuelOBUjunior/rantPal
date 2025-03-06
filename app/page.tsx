@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
             "Bugs driving you crazy? Code not compiling? Manager setting impossible deadlines?"<br/>
             Rant to our AI and get the most impractical adice you've ever heard!.
           </p>
+          <Link href="/chat">
+          Start Ranting
+          </Link>
         </div>
       </div>
     </main>
