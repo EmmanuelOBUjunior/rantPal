@@ -62,7 +62,13 @@ const page = () => {
     setTimeout(()=>{
         //set random funny response
         const randomResponse = funnyResponses[Math.floor(Math.random() * funnyResponses.length)]
-    })
+
+        const aiMessage:Message = {
+            id: Date.now().toString(),
+            content: randomResponse,
+            sender: 'ai'
+        }
+    }, 1500)
   }
 
   return (
