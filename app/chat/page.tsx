@@ -17,7 +17,9 @@ const page = () => {
 
         {/* Input Area */}
         <form>
-            <input type="text" />
+            <input type="text"
+            placeholder="Rant away... what's bothering you today?"
+            />
         </form>
     </div>
   )
