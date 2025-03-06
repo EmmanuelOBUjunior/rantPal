@@ -22,7 +22,7 @@ const page = () => {
         <input
           type="text"
           placeholder="Rant away... what's bothering you today?"
-          
+          className="flex-1 bg-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
         />
       </form>
     </div>
