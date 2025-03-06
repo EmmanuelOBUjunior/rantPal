@@ -35,6 +35,10 @@ const page = () => {
     "My professional recommendation is to blame it all on the intern and take a two-week vacation.",
     "Just add 'TODO: Fix later' comments everywhere and call it a day.",
   ];
+ 
+  const scrollToBottom = () =>{
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }
 
   return (
     <div className="flex flex-col h-screen bg-gray-900">
