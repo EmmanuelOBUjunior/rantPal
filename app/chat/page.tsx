@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 type Message = {
     id: string;
@@ -18,6 +18,7 @@ const page = () => {
 
     const [input, setInput] = useState('')
     const [isLoading, setIsLoading] = useState(false)
+    const messagesEndRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="flex flex-col h-screen bg-gray-900">
