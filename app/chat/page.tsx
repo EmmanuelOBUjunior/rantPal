@@ -92,6 +92,8 @@ const page = () => {
       <form onSubmit={handleSubmit} className="bg-gray-800 p-4 flex gap-2">
         <input
           type="text"
+          value={input}
+          onChange={(e)=>setInput(e.target.value)}
           placeholder="Rant away...what's bothering you today?"
           className="flex-1 bg-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
         />
