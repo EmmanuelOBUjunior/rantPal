@@ -45,7 +45,8 @@ const page = () => {
   }, [messages]);
 
   const handleSubmit = async(e:React.FormEvent) =>{
-
+    e.preventDefault();
+    if(!input) return
   }
 
   return (
