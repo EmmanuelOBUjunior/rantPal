@@ -54,6 +54,7 @@ const page = () => {
         content: input,
         sender: 'user'
     }
+    setMessages((prev)=>[...prev, userMessage])
   }
 
   return (
