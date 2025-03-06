@@ -16,6 +16,9 @@ const page = () => {
         </div>
 
         {/* Input Area */}
+        <form>
+            <input type="text" />
+        </form>
     </div>
   )
 }
