@@ -55,6 +55,14 @@ const page = () => {
         sender: 'user'
     }
     setMessages((prev)=>[...prev, userMessage])
+    setInput('')
+    setIsLoading(true);
+
+    //Simulate AI thinking
+    setTimeout(()=>{
+        //set random funny response
+        const randomResponse = funnyResponses[Math.floor(Math.random() * funnyResponses.length)]
+    })
   }
 
   return (
