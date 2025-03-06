@@ -15,7 +15,7 @@ export default function Home() {
             "Bugs driving you crazy? Code not compiling? Manager setting impossible deadlines?"<br/>
             Rant to our AI and get the most impractical adice you've ever heard!.
           </p>
-          <Link href="/chat">
+          <Link href="/chat" className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-200">
           Start Ranting
           </Link>
         </div>
