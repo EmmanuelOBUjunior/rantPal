@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Message = {
   id: string;
@@ -39,6 +39,10 @@ const page = () => {
   const scrollToBottom = () =>{
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }
+
+  useEffect(()=>{
+    scrollToBottom()
+  },[messages])
 
   return (
     <div className="flex flex-col h-screen bg-gray-900">
