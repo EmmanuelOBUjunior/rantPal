@@ -6,7 +6,7 @@ const page = () => {
     <div className='flex flex-col h-screen bg-gray-900'>
         {/* Header */}
         <header className = "bg-gray-800 p-4 text-white flex justify-between  items-center">
-        <Link href="/" className="text-xl font-bold">RantPal</Link>
+        <Link href="/" className="text-xl font-bold text-purple-400">RantPal</Link>
         </header>
     </div>
   )
