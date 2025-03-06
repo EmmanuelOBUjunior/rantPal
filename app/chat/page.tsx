@@ -16,6 +16,9 @@ const page = () => {
         sender: 'ai'
     }])
 
+    const [input, setInput] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
+
   return (
     <div className="flex flex-col h-screen bg-gray-900">
       {/* Header */}
