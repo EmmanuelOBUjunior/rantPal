@@ -68,6 +68,8 @@ const page = () => {
             content: randomResponse,
             sender: 'ai'
         }
+        setMessages((prev)=>[...prev, aiMessage])
+        setIsLoading(false);
     }, 1500)
   }
 
