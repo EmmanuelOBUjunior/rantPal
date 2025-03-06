@@ -9,6 +9,8 @@ const page = () => {
         <Link href="/" className="text-xl font-bold text-purple-400">RantPal</Link>
         <div className= "text-sm bg-purple-600 px-3 py-1 rounded-full">Therapy Mode</div>
         </header>
+
+        {/* Chat Messages */}
     </div>
   )
 }
