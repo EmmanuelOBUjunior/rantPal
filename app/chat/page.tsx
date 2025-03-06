@@ -1,7 +1,14 @@
 'use client'
 import Link from "next/link";
 
+type Message = {
+    id: string;
+    content: string;
+    sender: 'user' | 'ai'
+}
+
 const page = () => {
+
   return (
     <div className="flex flex-col h-screen bg-gray-900">
       {/* Header */}
