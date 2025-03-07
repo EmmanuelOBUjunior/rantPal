@@ -13,7 +13,9 @@ const ChatInput = () => {
         setInput('')
     }
   return (
-    <form>ChatInput</form>
+    <form onSubmit={handleSubmit} className = "bg-gray-800 p-4 flex gap-2">
+
+    </form>
   )
 }
 
