@@ -14,7 +14,11 @@ export const getRandomResponse = (rant: string): string => {
     return getRandomFromCategory("people");
   } else if (lowerRant.includes("javascript") || lowerRant.includes("js")) {
     return getRandomFromCategory("javascript");
-  } else if (lowerRant)
+  } else if (lowerRant.includes('css')|| lowerRant.includes('styling')){
+    return getRandomFromCategory('css')
+  }else{
+    return getRandomFromCategory('general')
+  }
     const responses = [
       "Have you tried turning your career off and on again?",
       "Sounds like you need to rewrite your entire codebase in Brainfuck. That'll solve everything!",
