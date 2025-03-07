@@ -19,6 +19,7 @@ export const getRandomResponse = (rant: string): string => {
   } else {
     return getRandomFromCategory("general");
   }
+
   const responses = {
     bugs: [
       "Have you tried turning your bug into a feature? Just update the documentation and call it a day.",
@@ -78,5 +79,5 @@ export const getRandomResponse = (rant: string): string => {
       const categoryResponses = responses[category]
     return categoryResponses[Math.floor(Math.random() * categoryResponses.length)];
   }
+}
 
-//TODO: Adding more sophisticated response generation based on keywords in the rant
