@@ -10,8 +10,15 @@ const ToggleTheme = () => {
         updateTheme(isDarkMode)
     },[])
 
-    const updateTheme = ()=>{
-        
+    const toggleDarkMode = ()=>{
+        const newDarkMode = !darkMode
+        setDarkMode(newDarkMode)
+        updateDarkMode(newDarkMode)
+        localStorage.setItem('darkMode', String(newDarkMode))
+    }
+
+    const updateTheme = (isDark:boolean)=>{
+
     }
   return (
     <div>ToggleTheme</div>
