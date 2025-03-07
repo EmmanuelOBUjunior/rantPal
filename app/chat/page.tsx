@@ -1,5 +1,6 @@
 "use client";
 import ChatInput from "@/components/ChatInput";
+import ChatMessage from "@/components/ChatMessage";
 import { useChat } from "@/providers/ChatContext";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -40,11 +41,7 @@ const page = () => {
       {/* Chat Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((message)=>(
-            <div key={message.id} className={`flex ${message.sender=== 'user'? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[80%] rounded-lg p-4 ${message.sender === 'user'?'bg-purple-600 text-white':'bg-gray-700 text-white'}`}>
-                    {message.content}
-                </div>
-            </div>
+            <ChatMessage key={message.id} message={message}/>
         ))}
 
         {isLoading && (
