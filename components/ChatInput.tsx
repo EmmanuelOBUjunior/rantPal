@@ -17,7 +17,7 @@ const ChatInput = () => {
       <input
         type="text"
         value={input}
-        onChange={(e = setInput(e.target.value))}
+        onChange={(e) => setInput(e.target.value)}
       />
     </form>
   );
