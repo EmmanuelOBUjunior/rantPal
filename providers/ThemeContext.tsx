@@ -11,6 +11,7 @@ const ThemeContext = createContext<ThemeContextType | undefined >(undefined)
 
 const ThemeContextProvider = ({children}:{children:ReactNode}) => {
     const [darkMode, setDarkMode] = useState(true)
+    const [mounted, setMounted] = useState(false)
 
   return (
     <div>ThemeContext</div>
