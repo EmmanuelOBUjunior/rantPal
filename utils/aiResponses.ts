@@ -2,6 +2,13 @@ export const getRandomResponse = (rant: string): string => {
   const lowerRant = rant.toLowerCase();
 
   //check for specific keywords and provide targeted responses
+  if(lowerRant.includes('bug') || lowerRant.includes('error')){
+    return getRandomFromCategory('bugs')
+  }else if(lowerRant.includes('deadline') || lowerRant.includes('time')){
+    return getRandomFromCategory('deadlines')
+  }else if(lowerRant.includes('manager') || lowerRant.includes('boss') || lowerRant.includes('client')){
+    return getRandomFromCategory('people')
+  }
 
   const responses = [
     "Have you tried turning your career off and on again?",
