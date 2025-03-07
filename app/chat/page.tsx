@@ -57,13 +57,14 @@ const page = () => {
         sender: 'user'
     }
     setMessages((prev)=>[...prev, userMessage])
+    const userRant = input
     setInput('')
     setIsLoading(true);
 
     //Simulate AI thinking
     setTimeout(()=>{
         //Get random funny response based on the user's rant
-        const randomResponse = getRandomResponse()
+        const randomResponse = getRandomResponse(userRant)
 
         const aiMessage:Message = {
             id: Date.now().toString(),
