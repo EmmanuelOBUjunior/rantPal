@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { SunIcon,MoonIcon } from "@heroicons/react/24/solid";
 
 const ToggleTheme = () => {
   const [darkMode, setDarkMode] = useState(true);
