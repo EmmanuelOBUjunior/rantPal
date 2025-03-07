@@ -32,7 +32,13 @@ const ToggleTheme = () => {
       onClick={toggleDarkMode}
       className="p-2 rounded-full bg-gray-700 dark:bg-gray-600 text-yellow-400 dark:text-blue-300 hover:bg-gray-600 transition-colors"
       aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-    ></button>
+    >
+        {darkMode ? (
+            <SunIcon/>
+        ):(
+
+        )}
+    </button>
   );
 };
 
