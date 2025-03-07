@@ -4,7 +4,7 @@ type ChatMessageType={
     message: Message
 }
 
-const ChatMessage = ({message}: ChatMessagePType) => {
+const ChatMessage = ({message}: ChatMessageType) => {
   return (
     <div></div>
   )
