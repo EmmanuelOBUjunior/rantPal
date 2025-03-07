@@ -6,6 +6,8 @@ const ToggleTheme = () => {
 
     useEffect(()=>{
         const isDarkMode = localStorage.getItem('darkMode') === 'true' || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        setDarkMode(isDarkMode)
+        updateTheme(isDarkMode)
     },[])
   return (
     <div>ToggleTheme</div>
