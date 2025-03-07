@@ -8,7 +8,9 @@ export const getRandomResponse = (rant: string): string => {
     return getRandomFromCategory('deadlines')
   }else if(lowerRant.includes('manager') || lowerRant.includes('boss') || lowerRant.includes('client')){
     return getRandomFromCategory('people')
-  }
+  }else if(lowerRant.includes('javascript') || lowerRant.includes('js')){
+    return getRandomFromCategory('javascript')
+  }else if(lowerRant)
 
   const responses = [
     "Have you tried turning your career off and on again?",
