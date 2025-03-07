@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, ReactNode } from "react"
+import { createContext, ReactNode, useState } from "react"
 
 type ThemeContextType = {
     darkMode: boolean,
@@ -10,6 +10,8 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined >(undefined)
 
 const ThemeContextProvider = ({children}:{children:ReactNode}) => {
+    const [darkMode, setDarkMode] = useState(true)
+
   return (
     <div>ThemeContext</div>
   )
