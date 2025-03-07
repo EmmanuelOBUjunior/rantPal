@@ -14,10 +14,11 @@ const page = () => {
       id: "1",
       content:
         "I'm RantPal, your sarcastic AI therapist. Tell me what's bothering you in your dev life, and I'll give you the most impractical advice possible",
-      sender: "ai",
+      sender: "ai", 
     },
   ]);
 
+  
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
