@@ -78,6 +78,5 @@ export const getRandomResponse = (rant: string): string => {
       const categoryResponses = responses[category]
     return categoryResponses[Math.floor(Math.random() * categoryResponses.length)];
   }
-};
 
 //TODO: Adding more sophisticated response generation based on keywords in the rant
