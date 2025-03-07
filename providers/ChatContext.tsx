@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext } from "react"
+import { createContext, ReactNode } from "react"
 
 export type Message = {
     id: string,
@@ -18,5 +18,5 @@ type ChatContextType = {
 const ChatContext = createContext<ChatContextType | undefined>(undefined)
 
 export const ChatProvider = ({children}:{children:ReactNode})=>{
-
+    
 }
