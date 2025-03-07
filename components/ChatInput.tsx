@@ -3,7 +3,7 @@ import { useChat } from "@/providers/ChatContext";
 import React, { useState } from "react";
 
 const ChatInput = () => {
-  const [input, setInput] = useState("second");
+  const [input, setInput] = useState('');
   const { sendMessage, isLoading } = useChat();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -18,7 +18,7 @@ const ChatInput = () => {
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        className="felx-1 bg-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2"
+        className="flex-1 bg-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2"
         placeholder="Rant away.. What's bothering you today"
         disabled={isLoading}
       />
