@@ -52,7 +52,9 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
         //Add AI Response
         const aiMessage = {
             id: (Date.now() + 1 ).toString(),
-        }
+            content: aiResponse,
+            sender: 'ai'
+       }
     },1500)
   }
 };
