@@ -1,6 +1,6 @@
-export const getRandomResponse = (rant:string):string =>{
-    const responses = [
-        "Have you tried turning your career off and on again?",
+export const getRandomResponse = (rant: string): string => {
+  const responses = [
+    "Have you tried turning your career off and on again?",
     "Sounds like you need to rewrite your entire codebase in Brainfuck. That'll solve everything!",
     "The solution is simple: just create your own programming language where bugs are features.",
     "Have you considered printing your code, burning it in a ritual, and then retyping it all from memory?",
@@ -19,10 +19,9 @@ export const getRandomResponse = (rant:string):string =>{
     "The problem is that Mercury is in retrograde, affecting your Git commits.",
     "Try coding with your non-dominant hand. It activates the creative side of your brain.",
     "Have you tried interpretive dance as a debugging technique?",
-    "Your code isn't buggy, it's just expressing its individuality."
-    ]
+    "Your code isn't buggy, it's just expressing its individuality.",
+  ];
 
-    //Get a random response
-    return responses[Math.floor(Math.random() * responses.length)]
-
-}
+  //Get a random response
+  return responses[Math.floor(Math.random() * responses.length)];
+};
