@@ -4,10 +4,11 @@ type ThemeContextType = {
     darkMode: boolean,
     toggleDarkMode: () => void
 }
-const ThemeContext = () => {
+
+const ThemeContextProvider = () => {
   return (
     <div>ThemeContext</div>
   )
 }
 
-export default ThemeContext
+export default ThemeContextProvider
