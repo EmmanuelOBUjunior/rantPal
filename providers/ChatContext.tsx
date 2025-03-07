@@ -1,7 +1,7 @@
 "use client";
 
 import { getRandomResponse } from "@/utils/aiResponses";
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 
 export type Message = {
   id: string;
@@ -75,5 +75,13 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     </ChatContext.Provider>
   )
 };
+
+export const useChat = () =>{
+    const context = useContext(ChatContext)
+    if(context === undefined){
+        throw new Error("useChat must be used within ChatProvider")
+    }
+    return context
+}
 
 
