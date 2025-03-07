@@ -1,5 +1,10 @@
+import { Message } from "@/providers/ChatContext"
 
-const ChatMessage = () => {
+type ChatMessageType={
+    message: Message
+}
+
+const ChatMessage = ({message}: ChatMessagePType) => {
   return (
     <div></div>
   )
