@@ -77,7 +77,7 @@ export const getRandomResponse = (rant: string): string => {
   //Get a random response
   const getRandomFromCategory = (category: keyof typeof responses):string =>{
         const categoryResponses = responses[category]
-      return categoryResponses[Math.floor(Math.random() * responses.length)];
+      return categoryResponses[Math.floor(Math.random() * categoryResponses.length)];
   }
 };
 
