@@ -5,3 +5,9 @@ export type Message = {
     content: string,
     sender: 'user'| 'ai'
 }
+
+type ChatContextType = {
+    messages: Message[],
+    isLoading: boolean,
+    sendMessage: (content:string)=> void
+}
