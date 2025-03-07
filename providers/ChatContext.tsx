@@ -56,6 +56,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
             sender: 'ai'
        }
        setMessages((prev)=>[...prev, aiMessage])
+       setIsLoading(false)
 
     },1500)
   }
