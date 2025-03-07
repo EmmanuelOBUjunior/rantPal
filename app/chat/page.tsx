@@ -62,7 +62,7 @@ const page = () => {
 
     //Simulate AI thinking
     setTimeout(()=>{
-        //set random funny response
+        //Get random funny response based on the user's rant
         const randomResponse = getRandomResponse()
 
         const aiMessage:Message = {
