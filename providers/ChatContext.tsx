@@ -24,40 +24,38 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       id: "1",
       content:
         "I'm RantAI, your sarcastic AI therapist. Tell me what's bothering you in your dev life, and I'll give you the most impractical advice possible!",
-      sender: "ai", 
+      sender: "ai",
     },
   ]);
 
   const [isLoading, setIsLoading] = useState(false);
-  
-  const sendMessage = (content:string)=>{
-    if(!content.trim()) return
+
+  const sendMessage = (content: string) => {
+    if (!content.trim()) return;
 
     //Add user message
-    const userMessage:Message={
-        id: Date.now().toString(),
-        content,
-        sender: 'user'
-    }
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      content,
+      sender: "user",
+    };
 
-    setMessages((prev)=>[...prev, userMessage])
+    setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
 
-
     //Simulate AI thinking
-    setTimeout(()=>{
-        //Get random funny response based on the user's rant
-        const aiResponse = getRandomResponse(content)
+    setTimeout(() => {
+      //Get random funny response based on the user's rant
+      const aiResponse = getRandomResponse(content);
 
-        //Add AI Response
-        const aiMessage = {
-            id: (Date.now() + 1 ).toString(),
-            content: aiResponse,
-            sender: 'ai'
-       }
-       setMessages((prev)=>[...prev, aiMessage])
-       setIsLoading(false)
-
-    },1500)
-  }
+      //Add AI Response
+      const aiMessage = {
+        id: (Date.now() + 1).toString(),
+        content: aiResponse,
+        sender: "ai",
+      };
+      setMessages((prev) => [...prev, aiMessage]);
+      setIsLoading(false);
+    }, 1500);
+  };
 };
