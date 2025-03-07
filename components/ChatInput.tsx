@@ -13,7 +13,7 @@ const ChatInput = () => {
         setInput('')
     }
   return (
-    <form>ChatInput</div>
+    <form>ChatInput</form>
   )
 }
 
