@@ -23,5 +23,6 @@ export const getRandomResponse = (rant:string):string =>{
     ]
 
     //Get a random response
+    return responses[Math.floor(Math.random() * responses.length)]
 
 }
