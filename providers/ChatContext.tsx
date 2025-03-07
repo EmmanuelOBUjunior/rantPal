@@ -1,5 +1,6 @@
 "use client";
 
+import { getRandomResponse } from "@/utils/aiResponses";
 import { createContext, ReactNode, useState } from "react";
 
 export type Message = {
@@ -38,5 +39,15 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
         content,
         sender: 'user'
     }
+
+    setMessages((prev)=>[...prev, userMessage])
+    setIsLoading(true);
+
+
+    //Simulate AI thinking
+    setTimeout(()=>{
+        //Get random funny response based on the user's rant
+        const aiResponse = getRandomResponse(content)
+    },1500)
   }
 };
