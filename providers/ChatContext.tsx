@@ -26,4 +26,17 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       sender: "ai", 
     },
   ]);
+
+  const [isLoading, setIsLoading] = useState(false);
+  
+  const sendMessage = (content:string)=>{
+    if(!content.trim()) return
+
+    //Add user message
+    const userMessage:Message={
+        id: Date.now().toString(),
+        content,
+        sender: 'user'
+    }
+  }
 };
