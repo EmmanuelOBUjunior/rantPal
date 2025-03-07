@@ -36,7 +36,7 @@ const ToggleTheme = () => {
         {darkMode ? (
             <SunIcon/>
         ):(
-
+            <MoonIcon/>
         )}
     </button>
   );
