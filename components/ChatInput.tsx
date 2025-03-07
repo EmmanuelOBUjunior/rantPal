@@ -18,7 +18,7 @@ const ChatInput = () => {
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        className="felx-1 bg-gray-700 text-white rounded0lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        className="felx-1 bg-gray-700 text-white rounded0lg px-4 py-2 focus:outline-none focus:ring-2"
       />
     </form>
   );
