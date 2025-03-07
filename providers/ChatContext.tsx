@@ -68,4 +68,12 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       },
     ]);
   };
+
+  return(
+    <ChatContext.Provider value={{messages, isLoading, sendMessage,clearChat}}>
+        {children}
+    </ChatContext.Provider>
+  )
 };
+
+
