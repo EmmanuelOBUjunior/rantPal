@@ -9,6 +9,10 @@ const ToggleTheme = () => {
         setDarkMode(isDarkMode)
         updateTheme(isDarkMode)
     },[])
+
+    const updateTheme = ()=>{
+        
+    }
   return (
     <div>ToggleTheme</div>
   )
