@@ -9,5 +9,6 @@ export type Message = {
 type ChatContextType = {
     messages: Message[],
     isLoading: boolean,
-    sendMessage: (content:string)=> void
+    sendMessage: (content:string)=> void,
+    clearChat: ()=> void
 }
