@@ -6,7 +6,11 @@ type ChatMessageType={
 
 const ChatMessage = ({message}: ChatMessageType) => {
   return (
-    <div></div>
+    <div className={`flex ${message.sender === 'user'? 'justify-end': 'justify-start'}`}>
+        <div className = {`max-w-[80%] rounded-lf p-4 ${message.sender === 'user'? 'bg-purple-600 text-white': 'bg-gray-700 text-white'}`}>
+            {message.content}
+        </div>
+    </div>
   )
 }
 
