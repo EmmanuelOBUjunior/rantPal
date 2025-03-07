@@ -1,4 +1,5 @@
 "use client";
+import ChatInput from "@/components/ChatInput";
 import { useChat } from "@/providers/ChatContext";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -61,22 +62,7 @@ const page = () => {
       </div>
 
       {/* Input Area */}
-      <form onSubmit={handleSubmit} className="bg-gray-800 p-4 flex gap-2">
-        <input
-          type="text"
-          value={input}
-          onChange={(e)=>setInput(e.target.value)}
-          placeholder="Rant away...what's bothering you today?"
-          className="flex-1 bg-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
-        />
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-lg disabled:opacity-50 transition-colors duration-200"
-        >
-          Send
-        </button>
-      </form>
+    <ChatInput/>
     </div>
   );
 };
