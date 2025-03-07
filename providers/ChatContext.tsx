@@ -58,4 +58,13 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       setIsLoading(false);
     }, 1500);
   };
+  const clearChat = ()=>{
+    setMessages([
+        {
+            id: '1',
+            content: "I'm RantAI, your sarcastic AI therapist. Tell me what's bothering you in your dev life, and I'll give you the most impractical advice possible!",
+            sender: 'ai', 
+        }
+    ]);
+  }
 };
