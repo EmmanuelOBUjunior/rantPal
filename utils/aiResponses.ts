@@ -73,11 +73,10 @@ export const getRandomResponse = (rant: string): string => {
       "Just add 'TODO: Fix later' comments everywhere and call it a day.",
     ],
   };
-
   //Get a random response
   const getRandomFromCategory = (category: keyof typeof responses):string =>{
-        const categoryResponses = responses[category]
-      return categoryResponses[Math.floor(Math.random() * categoryResponses.length)];
+      const categoryResponses = responses[category]
+    return categoryResponses[Math.floor(Math.random() * categoryResponses.length)];
   }
 };
 
