@@ -35,9 +35,9 @@ const ToggleTheme = () => {
       aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
     >
         {darkMode ? (
-            <SunIcon/>
+            <SunIcon className="h-5 w-5"/>
         ):(
-            <MoonIcon/>
+            <MoonIcon className="h-5 w-5"/>
         )}
     </button>
   );
