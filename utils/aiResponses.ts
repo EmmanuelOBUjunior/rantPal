@@ -1,4 +1,7 @@
 export const getRandomResponse = (rant: string): string => {
+
+    const lowerRant = rant.toLowerCase()
+
   const responses = [
     "Have you tried turning your career off and on again?",
     "Sounds like you need to rewrite your entire codebase in Brainfuck. That'll solve everything!",
