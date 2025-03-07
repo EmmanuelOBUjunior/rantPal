@@ -25,7 +25,7 @@ const ChatInput = () => {
       <button
         type="submit"
         disabled={isLoading || !input.trim()}
-        className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-lg disabled:opacity-50 transistion-colors duration-200"
+        className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-lg disabled:opacity-50 transition-colors duration-200"
       >
         Send
       </button>
