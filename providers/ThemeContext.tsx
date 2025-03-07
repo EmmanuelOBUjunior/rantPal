@@ -7,7 +7,7 @@ type ThemeContextType = {
     toggleDarkMode: () => void
 }
 
-const ThemeContext = createContext<ThemContextType | undefined >(undefined)
+const ThemeContext = createContext<ThemeContextType | undefined >(undefined)
 
 const ThemeContextProvider = () => {
   return (
