@@ -49,7 +49,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       const aiResponse = getRandomResponse(content);
 
       //Add AI Response
-      const aiMessage = {
+      const aiMessage:Message = {
         id: Date.now().toString(),
         content: aiResponse,
         sender: "ai",
