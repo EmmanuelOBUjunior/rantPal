@@ -16,3 +16,7 @@ type ChatContextType = {
 }
 
 const ChatContext = createContext<ChatContextType | undefined>(undefined)
+
+export const ChatProvider = ({children}:{children:ReactNode})=>{
+
+}
