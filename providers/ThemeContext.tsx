@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, ReactNode, useState } from "react"
+import { createContext, ReactNode, useEffect, useState } from "react"
 
 type ThemeContextType = {
     darkMode: boolean,
@@ -12,6 +12,14 @@ const ThemeContext = createContext<ThemeContextType | undefined >(undefined)
 const ThemeContextProvider = ({children}:{children:ReactNode}) => {
     const [darkMode, setDarkMode] = useState(true)
     const [mounted, setMounted] = useState(false)
+
+    useEffect(()=>{
+        //Only run this on the client side
+        setMounted(true)
+
+        //Check for user preference in localStorage or system preference
+        
+    },[])
 
   return (
     <div>ThemeContext</div>
