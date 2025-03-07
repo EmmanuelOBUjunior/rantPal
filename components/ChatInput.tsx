@@ -22,7 +22,7 @@ const ChatInput = () => {
         placeholder="Rant away.. What's bothering you today"
         disabled={isLoading}
       />
-      <button type="submit">Send</button>
+      <button type="submit" disabled={isLoading || !input.trim()}>Send</button>
     </form>
   );
 };
