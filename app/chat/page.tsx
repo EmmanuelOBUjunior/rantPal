@@ -1,4 +1,5 @@
 "use client";
+import { getRandomResponse } from "@/utils/aiResponses";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -62,7 +63,7 @@ const page = () => {
     //Simulate AI thinking
     setTimeout(()=>{
         //set random funny response
-        const randomResponse = funnyResponses[Math.floor(Math.random() * funnyResponses.length)]
+        const randomResponse = getRandomResponse()
 
         const aiMessage:Message = {
             id: Date.now().toString(),
