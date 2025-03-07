@@ -1,8 +1,7 @@
 export const getRandomResponse = (rant: string): string => {
+  const lowerRant = rant.toLowerCase();
 
-    const lowerRant = rant.toLowerCase()
-
-    //check for specific keywords and provide targeted responses
+  //check for specific keywords and provide targeted responses
 
   const responses = [
     "Have you tried turning your career off and on again?",
