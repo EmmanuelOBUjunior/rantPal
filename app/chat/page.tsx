@@ -1,5 +1,5 @@
 "use client";
-import { getRandomResponse } from "@/utils/aiResponses";
+import { useChat } from "@/providers/ChatContext";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -10,33 +10,10 @@ type Message = {
 };
 
 const page = () => {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "1",
-      content:
-        "I'm RantPal, your sarcastic AI therapist. Tell me what's bothering you in your dev life, and I'll give you the most impractical advice possible",
-      sender: "ai", 
-    },
-  ]);
-
-  
-  const [input, setInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const {messages, isLoading} = useChat()
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Some funny responses to test with
-  const funnyResponses = [
-    "Have you tried turning your career off and on again?",
-    "Sounds like you need to rewrite your entire codebase in Brainfuck. That'll solve everything!",
-    "The solution is simple: just create your own programming language where bugs are features.",
-    "Have you considered printing your code, burning it in a ritual, and then retyping it all from memory?",
-    "Maybe the real bug was the friends we made along the way.",
-    "I recommend solving this by adding at least 17 more frameworks to your tech stack.",
-    "Have you tried coding blindfolded? I hear it improves intuition by 300%.",
-    "The problem is clearly that you're not using enough nested ternary operators.",
-    "My professional recommendation is to blame it all on the intern and take a two-week vacation.",
-    "Just add 'TODO: Fix later' comments everywhere and call it a day.",
-  ];
+
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -46,35 +23,6 @@ const page = () => {
     scrollToBottom();
   }, [messages]);
 
-  const handleSubmit = async(e:React.FormEvent) =>{
-    e.preventDefault();
-    if(!input) return
-
-    //Add user message
-    const userMessage:Message = {
-        id: Date.now().toString(),
-        content: input,
-        sender: 'user'
-    }
-    setMessages((prev)=>[...prev, userMessage])
-    const userRant = input
-    setInput('')
-    setIsLoading(true);
-
-    //Simulate AI thinking
-    setTimeout(()=>{
-        //Get random funny response based on the user's rant
-        const randomResponse = getRandomResponse(userRant)
-
-        const aiMessage:Message = {
-            id: Date.now().toString(),
-            content: randomResponse,
-            sender: 'ai'
-        }
-        setMessages((prev)=>[...prev, aiMessage])
-        setIsLoading(false);
-    }, 1500)
-  }
 
   return (
     <div className="flex flex-col h-screen bg-gray-900">
