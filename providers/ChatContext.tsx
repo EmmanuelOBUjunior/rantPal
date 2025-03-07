@@ -48,6 +48,11 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     setTimeout(()=>{
         //Get random funny response based on the user's rant
         const aiResponse = getRandomResponse(content)
+
+        //Add AI Response
+        const aiMessage = {
+            id: (Date.now() + 1 ).toString(),
+        }
     },1500)
   }
 };
