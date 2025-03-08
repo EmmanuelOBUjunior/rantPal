@@ -18,15 +18,15 @@ type ChatContextType = {
 
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
 
+const initialMessage:Message = {
+  id: "1",
+  content:
+    "I'm RantAI, your sarcastic AI therapist. Tell me what's bothering you in your dev life, and I'll give you the most impractical advice possible",
+  sender: "ai",
+}
+
 export const ChatProvider = ({ children }: { children: ReactNode }) => {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "1",
-      content:
-        "I'm RantAI, your sarcastic AI therapist. Tell me what's bothering you in your dev life, and I'll give you the most impractical advice possible!",
-      sender: "ai",
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([initialMessage]);
 
   const [isLoading, setIsLoading] = useState(false);
 
