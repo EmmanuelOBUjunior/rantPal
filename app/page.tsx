@@ -1,6 +1,5 @@
 'use client'
 import ToggleTheme from "@/components/ToggleTheme";
-import { useTheme } from "@/providers/ThemeContext";
 import Link from "next/link";
 
 export default function Home() {
