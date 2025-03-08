@@ -52,13 +52,15 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
           setMessages([initialMessage])
         }
       }
+      setInitialized(true)
     }
   },[])
 
   //Save messages to localStorage whenever they change
   useEffect(()=>{
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages))
-  },[messages])
+    //Only save if we've already initialized from localStorage to prevent overwriting with the default state
+    if(initialized && typeof window!=== 'undefined') localStorage.setItem(STORAGE_KEY, JSON.stringify(messages))
+  },[messages, initialized])
 
   const sendMessage = (content: string) => {
     if (!content.trim()) return;
