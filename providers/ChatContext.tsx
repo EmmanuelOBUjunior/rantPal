@@ -37,16 +37,20 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
 
   //Load messages from localStorage on initial render
   useEffect(()=>{
-    const storedMessages = localStorage.getItem(STORAGE_KEY);
-    if(storedMessages){
-      try {
-        const parsedMessages = JSON.parse(storedMessages)
-        setMessages(parsedMessages)
-      } catch (error) {
-        console.error("Failed to parse saved messages: ", error)
-
-        //If parsing fails, reset to initial message
-        setMessages([initialMessage])
+    if(typeof window !== 'undefined'){
+      const storedMessages = localStorage.getItem(STORAGE_KEY);
+      if(storedMessages){
+        try {
+          const parsedMessages = JSON.parse(storedMessages)
+          if(Array.isArray(parsedMessages) && parsedMessages.length > 0){
+            setMessages(parsedMessages)
+          }
+        } catch (error) {
+          console.error("Failed to parse saved messages: ", error)
+  
+          //If parsing fails, reset to initial message
+          setMessages([initialMessage])
+        }
       }
     }
   },[])
