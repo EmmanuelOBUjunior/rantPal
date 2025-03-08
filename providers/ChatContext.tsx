@@ -1,7 +1,7 @@
 "use client";
 
 import { getRandomResponse } from "@/utils/aiResponses";
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
 export type Message = {
   id: string;
@@ -31,6 +31,27 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const [messages, setMessages] = useState<Message[]>([initialMessage]);
 
   const [isLoading, setIsLoading] = useState(false);
+
+  //Load messages from localStorage on initial render
+  useEffect(()=>{
+    const storedMessages = localStorage.getItem(STORAGE_KEY);
+    if(storedMessages){
+      try {
+        const parsedMessages = JSON.parse(storedMessages)
+        setMessages(parsedMessages)
+      } catch (error) {
+        console.error("Failed to parse saved messages: ", error)
+
+        //If parsing fails, reset to initial message
+        setMessages([initialMessage])
+      }
+    }
+  },[])
+
+  //Save messages to localStorage whenever they change
+  useEffect(()=>{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages))
+  },[messages])
 
   const sendMessage = (content: string) => {
     if (!content.trim()) return;
