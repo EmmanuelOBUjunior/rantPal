@@ -31,8 +31,9 @@ const STORAGE_KEY = 'rantpal-chat-history'
 
 export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const [messages, setMessages] = useState<Message[]>([initialMessage]);
-
+  const [initialized, setInitialized] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
 
   //Load messages from localStorage on initial render
   useEffect(()=>{
