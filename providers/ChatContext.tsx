@@ -24,6 +24,7 @@ const initialMessage:Message = {
   content:
     "I'm RantAI, your sarcastic AI therapist. Tell me what's bothering you in your dev life, and I'll give you the most impractical advice possible",
   sender: "ai",
+  timestamp: Date.now()
 }
 
 const STORAGE_KEY = 'rantpal-chat-history'
@@ -62,6 +63,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       id: Date.now().toString(),
       content,
       sender: "user",
+      timestamp: Date.now()
     };
 
     setMessages((prev) => [...prev, userMessage]);
@@ -77,20 +79,18 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
         id: Date.now().toString(),
         content: aiResponse,
         sender: "ai",
+        timestamp: Date.now()
       };
       setMessages((prev) => [...prev, aiMessage]);
       setIsLoading(false);
     }, 1500);
   };
   const clearChat = () => {
-    setMessages([
-      {
-        id: "1",
-        content:
-          "I'm RantAI, your sarcastic AI therapist. Tell me what's bothering you in your dev life, and I'll give you the most impractical advice possible!",
-        sender: "ai",
-      },
-    ]);
+    const newInitialMessage = {
+      ...initialMessage,
+      timestamp : Date.now()
+    }
+    setMessages([newInitialMessage]);
   };
 
   return(
