@@ -9,7 +9,7 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | undefined >(undefined)
 
-export const ThemeContextProvider = ({children}:{children:ReactNode}) => {
+export const ThemeProvider = ({children}:{children:ReactNode}) => {
     const [darkMode, setDarkMode] = useState(true)
     const [mounted, setMounted] = useState(false)
 

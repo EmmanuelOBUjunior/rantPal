@@ -22,9 +22,11 @@ export default function RootLayout({
       <body
         className={inter.className}
       >
+        <ThemeProvider>
         <ChatProvider>
         {children}
         </ChatProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
