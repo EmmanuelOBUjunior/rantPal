@@ -19,6 +19,10 @@ const ThemeContextProvider = ({children}:{children:ReactNode}) => {
 
         //Check for user preference in localStorage or system preference
         const isDarkMode = localStorage.getItem('darkMode') === 'true' || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+        setDarkMode(isDarkMode)
+        updateTheme(isDarkMode)
+
     },[])
 
   return (
