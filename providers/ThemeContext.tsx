@@ -39,6 +39,11 @@ const ThemeContextProvider = ({children}:{children:ReactNode}) => {
         }
     }
 
+    //Avoid rendering with incorrect theme
+    if(!mounted){
+        return null
+    }
+
   return (
     <div>ThemeContext</div>
   )
