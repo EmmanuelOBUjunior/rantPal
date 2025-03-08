@@ -22,8 +22,14 @@ const ThemeContextProvider = ({children}:{children:ReactNode}) => {
 
         setDarkMode(isDarkMode)
         updateTheme(isDarkMode)
-
     },[])
+
+    const toggleDarkMode = () =>{
+        const newDarkMode = !darkMode;
+        setDarkMode(newDarkMode);
+        updateTheme(newDarkMode);
+        localStorage.setItem('darkMode',String(newDarkMode))
+    }
 
   return (
     <div>ThemeContext</div>
