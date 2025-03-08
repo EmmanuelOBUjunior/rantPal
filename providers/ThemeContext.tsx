@@ -45,7 +45,9 @@ const ThemeContextProvider = ({children}:{children:ReactNode}) => {
     }
 
   return (
-    <div>ThemeContext</div>
+    <ThemeContext.Provider value={{darkMode, toggleDarkMode}}>
+        {children}
+    </ThemeContext.Provider>
   )
 }
 
