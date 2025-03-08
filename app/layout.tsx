@@ -24,9 +24,9 @@ export default function RootLayout({
         className={inter.className}
       >
         <ThemeProvider>
-        <ChatProvider>
+        {/* <ChatProvider> */}
         {children}
-        </ChatProvider>
+        {/* </ChatProvider> */}
         </ThemeProvider>
       </body>
     </html>
