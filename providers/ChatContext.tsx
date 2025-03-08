@@ -49,9 +49,9 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   },[])
 
   //Save messages to localStorage whenever they change
-  useEffect(()=>{
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages))
-  },[messages])
+  // useEffect(()=>{
+  //   localStorage.setItem(STORAGE_KEY, JSON.stringify(messages))
+  // },[messages])
 
   const sendMessage = (content: string) => {
     if (!content.trim()) return;
