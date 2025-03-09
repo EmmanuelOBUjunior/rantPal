@@ -32,7 +32,7 @@ const page = () => {
         <div className="text-sm text-white dark:ng-purple-500 bg-purple-600 px-3 py-1 rounded-full">
           Therapy Mode
         </div>
-        <button onClick={clearChat} >New Chat</button>
+        <button onClick={clearChat} className = "text-sm bg-gray-200 dark:bg-gray-300 dark:hover:bg-gray-600 px-3 py-1 rounded-full text-gray-700 dark:text-gray-300 transition-colors">New Chat</button>
       </header>
 
       {/* Chat Messages */}
