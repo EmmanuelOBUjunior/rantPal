@@ -13,7 +13,7 @@ const ChatInput = () => {
     setInput("");
   };
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-800 p-4 flex gap-2">
+    <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 shadow-md p-4 flex gap-2">
       <input
         type="text"
         value={input}
