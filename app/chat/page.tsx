@@ -1,6 +1,7 @@
 "use client";
 import ChatInput from "@/components/ChatInput";
 import ChatMessage from "@/components/ChatMessage";
+import Header from "@/components/Header";
 import ToggleTheme from "@/components/ToggleTheme";
 import { useChat } from "@/providers/ChatContext";
 import Link from "next/link";
@@ -22,7 +23,7 @@ const page = () => {
   return (
     <div className="flex flex-col h-screen dark:bg-gray-900 bg-gray-50">
       {/* Header */}
-      
+      <Header/>
       {/* Chat Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((message) => (
