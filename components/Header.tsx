@@ -20,6 +20,11 @@ const Header = ({ showNewChatButton = false, onNewChat }: HeaderType) => {
         <div className="text-sm bg-purple-600 dark:bg-purple-500 px-3 py-1 rounded-full text-white">
           Therapy Mode
         </div>
+        {
+            showNewChatButton && onNewChat &&(
+                <button onClick={onNewChat}>New Chat</button>
+            )
+        }
       </div>
     </header>
   );
