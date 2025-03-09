@@ -16,6 +16,9 @@ const Header = ({ showNewChatButton = false, onNewChat }: HeaderType) => {
       >
         RantPal
       </Link>
+      <div className="flex- items-center space-x-3">
+        <div className="text-sm bg-purple-600 dark:bg-purple-500 px-3 py-1 rounded-full text-white">Therapy Mode</div>
+      </div>
     </header>
   );
 };
