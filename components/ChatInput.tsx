@@ -1,6 +1,7 @@
 "use client";
 import { useChat } from "@/providers/ChatContext";
 import React, { useState } from "react";
+import { PaperAirplaneIcon } from "@heroicons/24/solid";
 
 const ChatInput = () => {
   const [input, setInput] = useState('');
@@ -27,7 +28,7 @@ const ChatInput = () => {
         disabled={isLoading || !input.trim()}
         className="bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-lg disabled:opacity-50 transition-colors duration-200"
       >
-        Send
+        Send <PaperAirplaneIcon class="h-6 w-6 text-gray-500" />
       </button>
     </form>
   );
