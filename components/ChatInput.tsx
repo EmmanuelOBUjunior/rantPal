@@ -1,7 +1,7 @@
 "use client";
 import { useChat } from "@/providers/ChatContext";
 import React, { useState } from "react";
-import { PaperAirplaneIcon } from "@heroicons/24/solid";
+import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 
 const ChatInput = () => {
   const [input, setInput] = useState('');
