@@ -18,7 +18,7 @@ const ChatInput = () => {
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        className="flex-1 bg-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2"
+        className="flex-1 bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors duration-200"
         placeholder="Rant away.. What's bothering you today"
         disabled={isLoading}
       />
