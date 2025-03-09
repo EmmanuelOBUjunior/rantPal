@@ -12,12 +12,12 @@ export default function Home() {
           The AI therapist that gives hilariously bad advice to frustrated
           developers.
           <br />
-          <span className="text-purple-300">
+          <span className="dark:text-purple-300 text-purple-500">
             Because sometimes you just need to rant.
           </span>
         </p>
         <div className="space-y-4">
-          <p className="text-gray-300 italic">
+          <p className="text-gary-600 dark:text-gray-300 italic">
             "Bugs driving you crazy? Code not compiling? Manager setting
             impossible deadlines?"
             <br />
