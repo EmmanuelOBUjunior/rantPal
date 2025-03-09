@@ -17,7 +17,7 @@ export default function Home() {
           </span>
         </p>
         <div className="space-y-4">
-          <p className="text-gary-600 dark:text-gray-300 italic">
+          <p className="text-gray-600 dark:text-gray-300 italic">
             "Bugs driving you crazy? Code not compiling? Manager setting
             impossible deadlines?"
             <br />
@@ -26,7 +26,7 @@ export default function Home() {
           </p>
           <Link
             href="/chat"
-            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-200"
+            className="dark:bg-purple-500 dark:hover:bg-purple-600 inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-200"
           >
             Start Ranting
           </Link>
