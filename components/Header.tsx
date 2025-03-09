@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import ToggleTheme from "./ToggleTheme";
-import {PlusIcon} from "heroicons/react/24/solid"
+import {PlusIcon} from "@heroicons/react/24/solid"
 
 type HeaderType = {
   showNewChatButton?: boolean;
