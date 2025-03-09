@@ -7,7 +7,7 @@ type HeaderType = {
 
 const Header = ({showNewChatButton = false, onNewChat}: HeaderType) => {
   return (
-    <div>Header</div>
+    <header>Header</header>
   )
 }
 
