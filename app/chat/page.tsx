@@ -9,6 +9,7 @@ import { useEffect, useRef} from "react";
 const page = () => {
   const {messages, isLoading} = useChat()
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const {clearChat} = useChat()
 
 
 
@@ -31,6 +32,7 @@ const page = () => {
         <div className="text-sm text-white dark:ng-purple-500 bg-purple-600 px-3 py-1 rounded-full">
           Therapy Mode
         </div>
+        <button onClick={clearChat} >New Chat</button>
       </header>
 
       {/* Chat Messages */}
