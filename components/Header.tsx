@@ -4,7 +4,8 @@ type HeaderType = {
     showNewChatButton?: boolean,
     onNewChat?: ()=> void;
 }
-const Header = () => {
+
+const Header = ({showNewChatButton = false, onNewChat}: HeaderType) => {
   return (
     <div>Header</div>
   )
