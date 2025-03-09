@@ -23,7 +23,7 @@ const page = () => {
   return (
     <div className="flex flex-col h-screen dark:bg-gray-900 bg-gray-50">
       {/* Header */}
-      <Header/>
+      <Header showNewChatButton={true} onNewChat={clearChat}/>
       {/* Chat Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((message) => (
