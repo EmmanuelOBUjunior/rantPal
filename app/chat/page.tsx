@@ -1,6 +1,7 @@
 "use client";
 import ChatInput from "@/components/ChatInput";
 import ChatMessage from "@/components/ChatMessage";
+import ToggleTheme from "@/components/ToggleTheme";
 import { useChat } from "@/providers/ChatContext";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
@@ -38,6 +39,7 @@ const page = () => {
           >
             New Chat
           </button>
+          <ToggleTheme/>
         </div>
       </header>
       {/* Chat Messages */}
