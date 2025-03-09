@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
+    <div className="flex min-h-screen flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
       <div className="absolute top-4 right-4"><ToggleTheme/></div>
       <div className="max-w-3xl text-center">
         <h1 className="text-5xl font-bold mb-6 text-purple-600 dark:text-purple-400">RantPal</h1>
@@ -32,6 +32,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
