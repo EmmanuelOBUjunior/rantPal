@@ -3,13 +3,8 @@ import ChatInput from "@/components/ChatInput";
 import ChatMessage from "@/components/ChatMessage";
 import { useChat } from "@/providers/ChatContext";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef} from "react";
 
-type Message = {
-  id: string;
-  content: string;
-  sender: "user" | "ai";
-};
 
 const page = () => {
   const {messages, isLoading} = useChat()
