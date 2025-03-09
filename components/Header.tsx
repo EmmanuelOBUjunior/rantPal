@@ -7,7 +7,9 @@ type HeaderType = {
 
 const Header = ({showNewChatButton = false, onNewChat}: HeaderType) => {
   return (
-    <header>Header</header>
+    <header className="bg-white dark:bg-gray-800 p-4 text-gray-900 darl:text-white flex justify-between intems-center shadow-sm transition-colors duration-200">
+
+    </header>
   )
 }
 
