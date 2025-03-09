@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import ToggleTheme from "./ToggleTheme";
+import {PlusIcon} from "heroicons/react/24/solid"
 
 type HeaderType = {
   showNewChatButton?: boolean;
@@ -23,7 +24,7 @@ const Header = ({ showNewChatButton = false, onNewChat }: HeaderType) => {
         </div>
         {
             showNewChatButton && onNewChat &&(
-                <button onClick={onNewChat} className = "text-sm bg-gray-200 hover:bg-gray-300 dar:bg-gray-700 dark:hover:bg-gray-600 px-3 py-1 rounded-full text-gray-700 dark:text-gray-300 transition-colors duration-200">New Chat</button>
+                <button onClick={onNewChat} className = "text-sm bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 px-3 py-1 rounded-full text-gray-700 dark:text-gray-300 transition-colors duration-200">New Chat<PlusIcon/></button>
             )
         }
         <ToggleTheme/>
