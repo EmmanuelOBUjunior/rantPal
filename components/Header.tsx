@@ -22,7 +22,7 @@ const Header = ({ showNewChatButton = false, onNewChat }: HeaderType) => {
         </div>
         {
             showNewChatButton && onNewChat &&(
-                <button onClick={onNewChat}>New Chat</button>
+                <button onClick={onNewChat} className = "text-sm bg-gray-200 hover:bg-gray-300 ">New Chat</button>
             )
         }
       </div>
