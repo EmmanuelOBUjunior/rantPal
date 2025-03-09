@@ -28,7 +28,7 @@ const ChatInput = () => {
         disabled={isLoading || !input.trim()}
         className="bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-lg disabled:opacity-50 transition-colors duration-200 flex items-center gap-1"
       >
-        Send <PaperAirplaneIcon class="h-4 w-4 text-white" />
+        Send <PaperAirplaneIcon className="h-4 w-4 text-white" />
       </button>
     </form>
   );
