@@ -24,7 +24,7 @@ const page = () => {
   return (
     <div className="flex flex-col h-screen dark:bg-gray-900 bg-gray-50">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 p-4 text-white flex justify-between  items-center">
+      <header className="bg-white dark:bg-gray-800 p-4  text-gray-900 dark:text-white flex justify-between  items-center">
         <Link href="/" className="text-xl font-bold text-purple-400">
           RantPal
         </Link>
