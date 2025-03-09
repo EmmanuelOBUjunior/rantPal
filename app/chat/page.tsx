@@ -22,26 +22,7 @@ const page = () => {
   return (
     <div className="flex flex-col h-screen dark:bg-gray-900 bg-gray-50">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 p-4 text-gray-900 dark:text-white flex justify-between items-center shadow-sm">
-        <Link
-          href="/"
-          className="text-xl font-bold text-purple-600 dark:text-purple-400"
-        >
-          RantPal
-        </Link>
-        <div className="flex items-center space-x-3">
-          <div className="text-sm text-white dark:ng-purple-500 bg-purple-600 px-3 py-1 rounded-full">
-            Therapy Mode
-          </div>
-          <button
-            onClick={clearChat}
-            className="text-sm bg-gray-200 dark:bg-gray-300 dark:hover:bg-gray-600 px-3 py-1 rounded-full text-gray-700 dark:text-gray-800 transition-colors"
-          >
-            New Chat
-          </button>
-          <ToggleTheme/>
-        </div>
-      </header>
+      
       {/* Chat Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((message) => (
