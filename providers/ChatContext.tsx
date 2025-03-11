@@ -1,7 +1,7 @@
 "use client";
 
 import { getRandomResponse } from "@/utils/aiResponses";
-import { getMessages } from "@/utils/indexedDB";
+import { getMessages, saveMessages } from "@/utils/indexedDB";
 import {
   createContext,
   ReactNode,
@@ -66,6 +66,11 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   //Save messages to IndexedDB whenever they change
   useEffect(()=>{
     //Only save if we've already initialized from IndexedDB to prevent overwriting with the default state
+    if(initialized && typeof window !== 'undefined'){
+      saveMessages(messages).catch(error =>{
+        console.error('Failed to save messages to IndexedDB: ', error)
+      })
+    }
   },[messages, initialized])
 
   // useEffect(()=>{
