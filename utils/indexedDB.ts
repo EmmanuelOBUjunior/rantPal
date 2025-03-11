@@ -6,8 +6,15 @@ const CHAT_STORAGE_NAME = 'chat-messages'
 
 //Initialize the database
 export const initDB = ():Promise<IDBDatabase> =>{
-return new Promise((resolve, reject))=>{
+return new Promise((resolve, reject)=>{
 const request = indexedDB.open(DB_NAME, DB_VERSION)
 
+request.onerror = (event)=>{
+    reject('Error opening Indexed database')
 }
+request.onsuccess = (event)=>{
+    resolve(request.result)
+}
+
+})
 }
