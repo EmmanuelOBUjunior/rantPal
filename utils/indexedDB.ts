@@ -27,6 +27,17 @@ export const initDB = (): Promise<IDBDatabase> => {
 // Save messages to IndexedDB
 export const saveMessages = async (messages: any[]): Promise<void> => {
   try {
+    const db = await initDB()
+    const transaction = db.transaction(CHAT_STORE_NAME, 'readwrite')
+    const store = transaction.objectStore(CHAT_STORE_NAME)
+
+    //Clear existing messages
+    store.clear()
+
+    //Add all messages
+    messages.forEach(message =>{
+        store.add(message)
+    })
   } catch (error) {
     console.error("Failed to save messages: ", error);
     throw error;
