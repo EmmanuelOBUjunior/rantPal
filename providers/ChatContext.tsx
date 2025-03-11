@@ -47,9 +47,9 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     if(typeof window !== 'undefined'){
       const loadMessages = async() =>{
         try {
-          const storedMesasges = await getMessages()
+          const storedMessages = await getMessages()
           if(Array.isArray(storedMessages) && storedMessages.length > 0){
-            setMessages(storedMesasges)
+            setMessages(storedMessages)
           }
           
         } catch (error) {
