@@ -54,6 +54,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
           setInitialized(true)
         }
       }
+      loadMessages()
     }
   },[])
   // useEffect(()=>{
