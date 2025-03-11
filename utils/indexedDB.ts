@@ -69,3 +69,22 @@ export const getMessages = async (): Promise<any[]> => {
     throw error;
   }
 };
+
+//Clear all messages from IndexedDB
+export const clearMessages = async():Promise<void> =>{
+    try {
+        const db = await initDB()
+        const transaction = db.transaction(CHAT_STORE_NAME, 'readwrite')
+        const store = transaction.objectStore(CHAT_STORE_NAME)
+        store.clear()
+
+        return new Promise((resolve, reject)=>{
+            transaction.oncomplete = ()=> resolve()
+            transaction.onerror = () => reject('Error clearing messages from IndexedDB')
+        })
+
+    } catch (error) {
+        console.error('Failed to clear messages: ', error)
+        throw error
+    }
+}
