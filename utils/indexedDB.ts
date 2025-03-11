@@ -2,7 +2,7 @@
 
 const DB_NAME = "rantpal-db";
 const DB_VERSION = 1;
-const CHAT_STORAGE_NAME = "chat-messages";
+const CHAT_STORE_NAME = "chat-messages";
 
 //Initialize the database
 export const initDB = (): Promise<IDBDatabase> => {
@@ -15,5 +15,11 @@ export const initDB = (): Promise<IDBDatabase> => {
     request.onsuccess = (event) => {
       resolve(request.result);
     };
+    request.onupgradeneeded = (event)=>{
+        const db = request.result
+        if(!db.objectStoreNames.contains(CHAT_STORE_NAME)){
+            db.createObjectStore(CHAT_STORE_NAME)
+        }
+    }
   });
 };
