@@ -52,5 +52,9 @@ export const saveMessages = async (messages: any[]): Promise<void> => {
 
 //Get all messages from IndexedDB
 export const getMessages = async():Promise<any[]> =>{
-
+try {
+    
+} catch (error) {
+    console.error('Failed to get messages: ', error)
+}
 }
