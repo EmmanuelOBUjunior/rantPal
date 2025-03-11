@@ -40,6 +40,7 @@ export const saveMessages = async (messages: any[]): Promise<void> => {
     })
     return new Promise((resolve, reject)=>{
         transaction.oncomplete = ()=> resolve()
+        transaction.onerror = () => reject('Error saving messages to IndexedDB')
     })
 
   } catch (error) {
@@ -47,3 +48,6 @@ export const saveMessages = async (messages: any[]): Promise<void> => {
     throw error;
   }
 };
+
+
+//Get all messages from IndexedDB
