@@ -48,7 +48,10 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
         try {
           
         } catch (error) {
-          
+          console.error('Failed to load messages from IndexedDB: ', error)
+          setMessages([initialMessage])
+        }finally{
+          setInitialized(true)
         }
       }
     }
