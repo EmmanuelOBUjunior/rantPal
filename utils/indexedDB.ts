@@ -59,7 +59,12 @@ try {
     const request = store.getAll()
     
     return new Promise((resolve, reject)=>{
-        
+       request.onsuccess = () =>{
+        resolve(request.result)
+       } 
+       request.onerror = () =>{
+        reject('Error getting messages from IndexedDB')
+       }
     })
 } catch (error) {
     console.error('Failed to get messages: ', error)
