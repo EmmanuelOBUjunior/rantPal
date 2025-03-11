@@ -51,3 +51,6 @@ export const saveMessages = async (messages: any[]): Promise<void> => {
 
 
 //Get all messages from IndexedDB
+export const getMessages = async():Promise<any[]> =>{
+
+}
