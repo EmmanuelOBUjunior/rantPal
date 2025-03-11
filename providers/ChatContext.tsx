@@ -1,6 +1,7 @@
 "use client";
 
 import { getRandomResponse } from "@/utils/aiResponses";
+import { getMessages } from "@/utils/indexedDB";
 import {
   createContext,
   ReactNode,
@@ -46,6 +47,10 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     if(typeof window !== 'undefined'){
       const loadMessages = async() =>{
         try {
+          const storedMesasges = await getMessages()
+          if(Array.isArray(storedMessages) && storedMessages.length > 0){
+            setMessages(storedMesasges)
+          }
           
         } catch (error) {
           console.error('Failed to load messages from IndexedDB: ', error)
