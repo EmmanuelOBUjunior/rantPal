@@ -41,6 +41,18 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   //Load messages from localStorage on initial render
+  useEffect(()=>{
+    //Only run this on the cleint side
+    if(typeof window !== 'undefined'){
+      const loadMessages = async() =>{
+        try {
+          
+        } catch (error) {
+          
+        }
+      }
+    }
+  },[])
   // useEffect(()=>{
   //   if(typeof window !== 'undefined'){
   //     const storedMessages = localStorage.getItem(STORAGE_KEY);
