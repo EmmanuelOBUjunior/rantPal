@@ -18,7 +18,7 @@ export const initDB = (): Promise<IDBDatabase> => {
     request.onupgradeneeded = (event)=>{
         const db = request.result
         if(!db.objectStoreNames.contains(CHAT_STORE_NAME)){
-            db.createObjectStore(CHAT_STORE_NAME)
+            db.createObjectStore(CHAT_STORE_NAME, {keyPath:'id'})
         }
     }
   });
