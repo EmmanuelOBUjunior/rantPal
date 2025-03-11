@@ -27,7 +27,7 @@ const initialMessage:Message = {
   timestamp: Date.now()
 }
 
-const STORAGE_KEY = 'rantpal-chat-history'
+// const STORAGE_KEY = 'rantpal-chat-history'
 
 export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const [messages, setMessages] = useState<Message[]>([initialMessage]);
