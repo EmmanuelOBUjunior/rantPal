@@ -38,6 +38,10 @@ export const saveMessages = async (messages: any[]): Promise<void> => {
     messages.forEach(message =>{
         store.add(message)
     })
+    return new Promise((resolve, reject)=>{
+        transaction.oncomplete = ()=> resolve()
+    })
+
   } catch (error) {
     console.error("Failed to save messages: ", error);
     throw error;
