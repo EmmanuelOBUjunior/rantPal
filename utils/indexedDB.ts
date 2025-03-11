@@ -56,5 +56,6 @@ try {
     
 } catch (error) {
     console.error('Failed to get messages: ', error)
+    throw error
 }
 }
