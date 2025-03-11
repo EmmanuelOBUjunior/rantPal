@@ -27,47 +27,45 @@ export const initDB = (): Promise<IDBDatabase> => {
 // Save messages to IndexedDB
 export const saveMessages = async (messages: any[]): Promise<void> => {
   try {
-    const db = await initDB()
-    const transaction = db.transaction(CHAT_STORE_NAME, 'readwrite')
-    const store = transaction.objectStore(CHAT_STORE_NAME)
+    const db = await initDB();
+    const transaction = db.transaction(CHAT_STORE_NAME, "readwrite");
+    const store = transaction.objectStore(CHAT_STORE_NAME);
 
     //Clear existing messages
-    store.clear()
+    store.clear();
 
     //Add all messages
-    messages.forEach(message =>{
-        store.add(message)
-    })
-    return new Promise((resolve, reject)=>{
-        transaction.oncomplete = ()=> resolve()
-        transaction.onerror = () => reject('Error saving messages to IndexedDB')
-    })
-
+    messages.forEach((message) => {
+      store.add(message);
+    });
+    return new Promise((resolve, reject) => {
+      transaction.oncomplete = () => resolve();
+      transaction.onerror = () => reject("Error saving messages to IndexedDB");
+    });
   } catch (error) {
     console.error("Failed to save messages: ", error);
     throw error;
   }
 };
 
-
 //Get all messages from IndexedDB
-export const getMessages = async():Promise<any[]> =>{
-try {
-    const db = initDB()
-    const transaction = (await db).transaction(CHAT_STORE_NAME, 'readonly')
-    const store = transaction.objectStore(CHAT_STORE_NAME)
-    const request = store.getAll()
-    
-    return new Promise((resolve, reject)=>{
-       request.onsuccess = () =>{
-        resolve(request.result)
-       } 
-       request.onerror = () =>{
-        reject('Error getting messages from IndexedDB')
-       }
-    })
-} catch (error) {
-    console.error('Failed to get messages: ', error)
-    throw error
-}
-}
+export const getMessages = async (): Promise<any[]> => {
+  try {
+    const db = initDB();
+    const transaction = (await db).transaction(CHAT_STORE_NAME, "readonly");
+    const store = transaction.objectStore(CHAT_STORE_NAME);
+    const request = store.getAll();
+
+    return new Promise((resolve, reject) => {
+      request.onsuccess = () => {
+        resolve(request.result);
+      };
+      request.onerror = () => {
+        reject("Error getting messages from IndexedDB");
+      };
+    });
+  } catch (error) {
+    console.error("Failed to get messages: ", error);
+    throw error;
+  }
+};
