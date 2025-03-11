@@ -1,13 +1,19 @@
 "use client";
 
 import { getRandomResponse } from "@/utils/aiResponses";
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 export type Message = {
   id: string;
   content: string;
   sender: "user" | "ai";
-  timestamp : number;
+  timestamp: number;
 };
 
 type ChatContextType = {
@@ -19,13 +25,13 @@ type ChatContextType = {
 
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
 
-const initialMessage:Message = {
+const initialMessage: Message = {
   id: "1",
   content:
     "I'm RantAI, your sarcastic AI therapist. Tell me what's bothering you in your dev life, and I'll give you the most impractical advice possible",
   sender: "ai",
-  timestamp: Date.now()
-}
+  timestamp: Date.now(),
+};
 
 // const STORAGE_KEY = 'rantpal-chat-history'
 
@@ -33,7 +39,6 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const [messages, setMessages] = useState<Message[]>([initialMessage]);
   const [initialized, setInitialized] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
 
   //Load messages from localStorage on initial render
   // useEffect(()=>{
@@ -47,7 +52,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   //         }
   //       } catch (error) {
   //         console.error("Failed to parse saved messages: ", error)
-  
+
   //         //If parsing fails, reset to initial message
   //         setMessages([initialMessage])
   //       }
@@ -72,7 +77,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       id: Date.now().toString(),
       content,
       sender: "user",
-      timestamp: Date.now()
+      timestamp: Date.now(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
@@ -88,7 +93,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
         id: Date.now().toString(),
         content: aiResponse,
         sender: "ai",
-        timestamp: Date.now()
+        timestamp: Date.now(),
       };
       setMessages((prev) => [...prev, aiMessage]);
       setIsLoading(false);
@@ -97,24 +102,24 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const clearChat = () => {
     const newInitialMessage = {
       ...initialMessage,
-      timestamp : Date.now()
-    }
+      timestamp: Date.now(),
+    };
     setMessages([newInitialMessage]);
   };
 
-  return(
-    <ChatContext.Provider value={{messages, isLoading, sendMessage,clearChat}}>
-        {children}
+  return (
+    <ChatContext.Provider
+      value={{ messages, isLoading, sendMessage, clearChat }}
+    >
+      {children}
     </ChatContext.Provider>
-  )
+  );
 };
 
-export const useChat = () =>{
-    const context = useContext(ChatContext)
-    if(context === undefined){
-        throw new Error("useChat must be used within ChatProvider")
-    }
-    return context
-}
-
-
+export const useChat = () => {
+  const context = useContext(ChatContext);
+  if (context === undefined) {
+    throw new Error("useChat must be used within ChatProvider");
+  }
+  return context;
+};
