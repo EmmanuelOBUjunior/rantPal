@@ -23,3 +23,5 @@ export const initDB = (): Promise<IDBDatabase> => {
     }
   });
 };
+
+// Save messages to IndexedDB
