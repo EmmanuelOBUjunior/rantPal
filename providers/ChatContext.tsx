@@ -64,6 +64,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   },[])
 
   //Save messages to IndexedDB whenever they change
+  useEffect(()=>{},[messages, initialized])
 
   // useEffect(()=>{
   //   if(typeof window !== 'undefined'){
