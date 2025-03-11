@@ -62,6 +62,9 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       loadMessages()
     }
   },[])
+
+  //Save messages to IndexedDB whenever they change
+
   // useEffect(()=>{
   //   if(typeof window !== 'undefined'){
   //     const storedMessages = localStorage.getItem(STORAGE_KEY);
