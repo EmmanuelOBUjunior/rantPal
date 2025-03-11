@@ -15,13 +15,20 @@ export const initDB = (): Promise<IDBDatabase> => {
     request.onsuccess = (event) => {
       resolve(request.result);
     };
-    request.onupgradeneeded = (event)=>{
-        const db = request.result
-        if(!db.objectStoreNames.contains(CHAT_STORE_NAME)){
-            db.createObjectStore(CHAT_STORE_NAME, {keyPath:'id'})
-        }
-    }
+    request.onupgradeneeded = (event) => {
+      const db = request.result;
+      if (!db.objectStoreNames.contains(CHAT_STORE_NAME)) {
+        db.createObjectStore(CHAT_STORE_NAME, { keyPath: "id" });
+      }
+    };
   });
 };
 
 // Save messages to IndexedDB
+export const saveMessages = async (messages: any[]): Promise<void> => {
+  try {
+  } catch (error) {
+    console.error("Failed to save messages: ", error);
+    throw error;
+  }
+};
