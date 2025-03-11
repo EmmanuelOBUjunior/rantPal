@@ -53,7 +53,14 @@ export const saveMessages = async (messages: any[]): Promise<void> => {
 //Get all messages from IndexedDB
 export const getMessages = async():Promise<any[]> =>{
 try {
+    const db = initDB()
+    const transaction = (await db).transaction(CHAT_STORE_NAME, 'readonly')
+    const store = transaction.objectStore(CHAT_STORE_NAME)
+    const request = store.getAll()
     
+    return new Promise((resolve, reject)=>{
+        
+    })
 } catch (error) {
     console.error('Failed to get messages: ', error)
     throw error
