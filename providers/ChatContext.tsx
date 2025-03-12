@@ -2,6 +2,7 @@
 
 import { getRandomResponse } from "@/utils/aiResponses";
 import { generateOpenAIResponse } from "@/utils/aiService";
+import { generateDeepSeekResponse } from "@/utils/deepseekAIService";
 import { getMessages, saveMessages } from "@/utils/indexedDB";
 import {
   createContext,
@@ -118,7 +119,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
 
     try {
       //Get response from OpenAI
-      const aiResponse = await generateOpenAIResponse(content)
+      const aiResponse = await generateDeepSeekResponse(content)
 
       //Add AI Response
       const aiMessage:Message = {
