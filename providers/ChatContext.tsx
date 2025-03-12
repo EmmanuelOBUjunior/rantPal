@@ -130,6 +130,17 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       setMessages((prev)=>[...prev, aiMessage])
     } catch (error) {
       console.error('Error getting AI response: ', error)
+      //Fallback to random response if API fails
+      const fallbackResponse = getRandomResponse(content)
+      const aiMessage:Message = {
+        id: (Date.now()+1).toString(),
+        content: fallbackResponse+ " (Fallback Response)",
+        sender: 'ai',
+        timestamp: Date.now()
+      }
+      setMessages((prev)=>[...prev, aiMessage])
+    }finally{
+      setIsLoading(false)
     }
 
     //Simulate AI thinking
