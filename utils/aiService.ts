@@ -27,6 +27,8 @@ export const generateOpenAIResponse = async (
       temperature: 0.8,
       max_tokens: 150,
     });
+
+    return response.choices[0]?.message?.content || "Sorry, my circuits are fried from all these developer rants. Try again when I've had my coffee."
   } catch (error) {
     console.error("Error generating OpenAI response: ", error);
     //Call the fallback response generator
