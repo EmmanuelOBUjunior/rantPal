@@ -22,6 +22,14 @@ export const generateDeepSeekResponse = async(userMessage:string):Promise<string
                 ]
             })
         })
+
+        if(!response.ok){
+            throw new Error(`DeepSeek API error: ${response.status}`)
+        }
+        const data = await response.json()
+        return data.choices[0]?.message?.content || "Sorry, my circuits are fried from all these developer rants. Try again when I've had my coffee."
+
+
     }catch(error){
         console.error("Error generating DeepSeek response: ", error);
         return getRandomResponse(userMessage);
