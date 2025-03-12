@@ -10,6 +10,9 @@ export const generateOpenAIResponse = async(userMessage:string):Promise<string> 
     try {
         
     } catch (error) {
-        console.error()
+        console.error('Error generating OpenAI response: ', error)
+        return getRandomResponse(userMessage)
     }
 }
+
+import {getRandomResponse} from './aiResponse.ts'
