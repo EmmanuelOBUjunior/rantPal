@@ -10,7 +10,11 @@ const openai = new OpenAI({
 export const generateOpenAIResponse = async(userMessage:string):Promise<string> =>{
     try {
         const response = await openai.chat.completions.create({
-            model: 'gpt-3.5-turbo'
+            model: 'gpt-3.5-turbo',
+            messages:[{
+                role: 'system',
+                content: 'You are RantPal, a sarcastic AI therapist for frustrated developes. Your responses should be funny, slightly sarcastic, and give intentionally impractical advice. Keep responses very concise.'
+            }]
         })
         
     } catch (error) {
