@@ -18,8 +18,9 @@ export const generateOpenAIResponse = async(userMessage:string):Promise<string> 
         {
             role: 'user',
             content: userMessage
-        },
-        ]
+        }],
+        temperature: 0.8,
+        max_tokens: 150
         })
         
     } catch (error) {
