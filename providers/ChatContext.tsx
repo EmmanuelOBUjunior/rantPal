@@ -134,7 +134,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       const fallbackResponse = getRandomResponse(content)
       const aiMessage:Message = {
         id: (Date.now()+1).toString(),
-        content: fallbackResponse+ " (Fallback Response)",
+        content: fallbackResponse + " (Fallback Response)",
         sender: 'ai',
         timestamp: Date.now()
       }
@@ -158,7 +158,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     //   setMessages((prev) => [...prev, aiMessage]);
     //   setIsLoading(false);
     // }, 1500);
-    
+
   };
   const clearChat = () => {
     const newInitialMessage = {
