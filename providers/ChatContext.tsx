@@ -1,6 +1,7 @@
 "use client";
 
 import { getRandomResponse } from "@/utils/aiResponses";
+import { generateOpenAIResponse } from "@/utils/aiService";
 import { getMessages, saveMessages } from "@/utils/indexedDB";
 import {
   createContext,
@@ -101,7 +102,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   //   }
   // },[messages, initialized])
 
-  const sendMessage = (content: string) => {
+  const sendMessage = async(content: string) => {
     if (!content.trim()) return;
 
     //Add user message
@@ -117,6 +118,15 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
 
     try {
       //Get response from OpenAI
+      const aiResponse = await generateOpenAIResponse(content)
+
+      //Add AI Response
+      const aiMessage:Message = {
+        id: (Date.now() + 1).toString(),
+        const: aiResponse,
+        sender:'ai',
+        timestamp: Date.now()
+      }
     } catch (error) {
       
     }
