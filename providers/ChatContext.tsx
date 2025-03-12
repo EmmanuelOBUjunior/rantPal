@@ -144,20 +144,20 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     }
 
     //Simulate AI thinking
-    setTimeout(() => {
-      //Get random funny response based on the user's rant
-      const aiResponse = getRandomResponse(content);
+    // setTimeout(() => {
+    //   //Get random funny response based on the user's rant
+    //   const aiResponse = getRandomResponse(content);
 
-      //Add AI Response
-      const aiMessage: Message = {
-        id: Date.now().toString(),
-        content: aiResponse,
-        sender: "ai",
-        timestamp: Date.now(),
-      };
-      setMessages((prev) => [...prev, aiMessage]);
-      setIsLoading(false);
-    }, 1500);
+    //   //Add AI Response
+    //   const aiMessage: Message = {
+    //     id: Date.now().toString(),
+    //     content: aiResponse,
+    //     sender: "ai",
+    //     timestamp: Date.now(),
+    //   };
+    //   setMessages((prev) => [...prev, aiMessage]);
+    //   setIsLoading(false);
+    // }, 1500);
   };
   const clearChat = () => {
     const newInitialMessage = {
