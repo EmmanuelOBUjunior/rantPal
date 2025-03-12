@@ -12,6 +12,7 @@ export const generateOpenAIResponse = async(userMessage:string):Promise<string> 
         
     } catch (error) {
         console.error('Error generating OpenAI response: ', error)
+        //Call the fallback response generator
         return getRandomResponse(userMessage)
     }
 }
