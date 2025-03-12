@@ -14,7 +14,12 @@ export const generateOpenAIResponse = async(userMessage:string):Promise<string> 
             messages:[{
                 role: 'system',
                 content: 'You are RantPal, a sarcastic AI therapist for frustrated developes. Your responses should be funny, slightly sarcastic, and give intentionally impractical advice. Keep responses very concise.'
-            }]
+            },
+        {
+            role: 'user',
+            content: userMessage
+        },
+        ]
         })
         
     } catch (error) {
