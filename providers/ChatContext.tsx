@@ -127,6 +127,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
         sender:'ai',
         timestamp: Date.now()
       }
+      setMessages((prev)=>[...prev, aiMessage])
     } catch (error) {
       
     }
