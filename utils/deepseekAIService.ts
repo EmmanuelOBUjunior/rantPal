@@ -6,7 +6,7 @@ export const generateDeepSeekResponse = async(userMessage:string):Promise<string
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`
+                'Authorization': `Bearer ${process.env.NEXT_PUBLIC_DEEPSEEK_API_KEY}`
             },
         })
     }catch(error){
