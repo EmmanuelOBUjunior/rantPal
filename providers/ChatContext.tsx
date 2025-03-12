@@ -123,7 +123,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       //Add AI Response
       const aiMessage:Message = {
         id: (Date.now() + 1).toString(),
-        const: aiResponse,
+        content: aiResponse,
         sender:'ai',
         timestamp: Date.now()
       }
