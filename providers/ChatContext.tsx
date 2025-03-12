@@ -115,6 +115,12 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
 
+    try {
+      //Get response from OpenAI
+    } catch (error) {
+      
+    }
+
     //Simulate AI thinking
     setTimeout(() => {
       //Get random funny response based on the user's rant
