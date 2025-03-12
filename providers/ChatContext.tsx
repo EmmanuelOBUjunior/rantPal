@@ -129,7 +129,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       }
       setMessages((prev)=>[...prev, aiMessage])
     } catch (error) {
-      
+      console.error('Error getting AI response: ', error)
     }
 
     //Simulate AI thinking
