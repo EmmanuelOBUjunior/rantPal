@@ -14,6 +14,10 @@ export const generateDeepSeekResponse = async(userMessage:string):Promise<string
                     {
                         role: 'system',
                         content: 'You are RantPal, a sarcastic AI therapist for frustrated developers. Your responses should be funny, slightly sarcastic, and give intentionally impractical advice. Keep responses very concise.'
+                    },
+                    {
+                        role: 'user',
+                        content: userMessage
                     }
                 ]
             })
