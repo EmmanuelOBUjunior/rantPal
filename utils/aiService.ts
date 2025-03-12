@@ -9,6 +9,9 @@ const openai = new OpenAI({
 
 export const generateOpenAIResponse = async(userMessage:string):Promise<string> =>{
     try {
+        const response = await openai.chat.completions.create({
+            model: 'gpt-3.5-turbo'
+        })
         
     } catch (error) {
         console.error('Error generating OpenAI response: ', error)
