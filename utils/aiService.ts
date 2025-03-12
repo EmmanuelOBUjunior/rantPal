@@ -1,4 +1,5 @@
 import OpenAI from 'openai';
+import { getRandomResponse } from './aiResponses';
 
 //Initialize OpenAI clinet
 const openai = new OpenAI({
@@ -14,5 +15,3 @@ export const generateOpenAIResponse = async(userMessage:string):Promise<string> 
         return getRandomResponse(userMessage)
     }
 }
-
-import {getRandomResponse} from './aiResponse.ts'
