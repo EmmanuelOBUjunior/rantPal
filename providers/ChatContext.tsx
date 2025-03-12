@@ -158,6 +158,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     //   setMessages((prev) => [...prev, aiMessage]);
     //   setIsLoading(false);
     // }, 1500);
+    
   };
   const clearChat = () => {
     const newInitialMessage = {
